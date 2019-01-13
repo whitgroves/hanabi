@@ -25,11 +25,13 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    tile.cpp
+    tile.cpp \
+    player.cpp
 
 HEADERS += \
         mainwindow.h \
-    tile.h
+    tile.h \
+    player.h
 
 FORMS += \
         mainwindow.ui
