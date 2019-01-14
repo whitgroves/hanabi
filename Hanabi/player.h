@@ -9,6 +9,8 @@ class Player
 {
 public:
     Player(QString username);
+
+private:
     QString username;
     QList<QString> tiles;
 };
