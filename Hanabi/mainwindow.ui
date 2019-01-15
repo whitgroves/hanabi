@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralWidget">
+  <widget class="QWidget" name="Game_Widget">
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
      <widget class="QWidget" name="Player2Hand_Widget" native="true">
@@ -22,28 +22,28 @@
       </property>
       <layout class="QGridLayout" name="gridLayout_7">
        <item row="5" column="0">
-        <widget class="QWidget" name="widget_26" native="true">
+        <widget class="QWidget" name="Player2Card5_Widget" native="true">
          <property name="styleSheet">
           <string notr="true">background-color: rgb(134, 134, 134);</string>
          </property>
         </widget>
        </item>
        <item row="3" column="0">
-        <widget class="QWidget" name="widget_28" native="true">
+        <widget class="QWidget" name="Player2Card3_Widget" native="true">
          <property name="styleSheet">
           <string notr="true">background-color: rgb(134, 134, 134);</string>
          </property>
         </widget>
        </item>
        <item row="2" column="0">
-        <widget class="QWidget" name="widget_29" native="true">
+        <widget class="QWidget" name="Player2Card2_Widget" native="true">
          <property name="styleSheet">
           <string notr="true">background-color: rgb(134, 134, 134);</string>
          </property>
         </widget>
        </item>
        <item row="0" column="0">
-        <widget class="QLabel" name="label_6">
+        <widget class="QLabel" name="Player2Hand_Label">
          <property name="styleSheet">
           <string notr="true">color: rgb(0, 0, 0);</string>
          </property>
@@ -56,14 +56,14 @@
         </widget>
        </item>
        <item row="4" column="0">
-        <widget class="QWidget" name="widget_27" native="true">
+        <widget class="QWidget" name="Player2Card4_Widget" native="true">
          <property name="styleSheet">
           <string notr="true">background-color: rgb(134, 134, 134);</string>
          </property>
         </widget>
        </item>
        <item row="1" column="0">
-        <widget class="QWidget" name="widget_30" native="true">
+        <widget class="QWidget" name="Player2Card1_Widget" native="true">
          <property name="styleSheet">
           <string notr="true">background-color: rgb(134, 134, 134);</string>
          </property>
@@ -79,7 +79,7 @@
       </property>
       <layout class="QGridLayout" name="gridLayout_8">
        <item row="0" column="0">
-        <widget class="QLabel" name="label_7">
+        <widget class="QLabel" name="Player3Hand_Label">
          <property name="styleSheet">
           <string notr="true">color: rgb(0, 0, 0);</string>
          </property>
@@ -92,35 +92,35 @@
         </widget>
        </item>
        <item row="4" column="0">
-        <widget class="QWidget" name="widget_22" native="true">
+        <widget class="QWidget" name="Player3Card4_Widget" native="true">
          <property name="styleSheet">
           <string notr="true">background-color: rgb(134, 134, 134);</string>
          </property>
         </widget>
        </item>
        <item row="3" column="0">
-        <widget class="QWidget" name="widget_23" native="true">
+        <widget class="QWidget" name="Player3Card3_Widget" native="true">
          <property name="styleSheet">
           <string notr="true">background-color: rgb(134, 134, 134);</string>
          </property>
         </widget>
        </item>
        <item row="2" column="0">
-        <widget class="QWidget" name="widget_24" native="true">
+        <widget class="QWidget" name="Player3Card2_Widget" native="true">
          <property name="styleSheet">
           <string notr="true">background-color: rgb(134, 134, 134);</string>
          </property>
         </widget>
        </item>
        <item row="5" column="0">
-        <widget class="QWidget" name="widget_21" native="true">
+        <widget class="QWidget" name="Player3Card5_Widget" native="true">
          <property name="styleSheet">
           <string notr="true">background-color: rgb(134, 134, 134);</string>
          </property>
         </widget>
        </item>
        <item row="1" column="0">
-        <widget class="QWidget" name="widget_25" native="true">
+        <widget class="QWidget" name="Player3Card1_Widget" native="true">
          <property name="styleSheet">
           <string notr="true">background-color: rgb(134, 134, 134);</string>
          </property>
@@ -136,35 +136,35 @@
       </property>
       <layout class="QGridLayout" name="gridLayout_9">
        <item row="4" column="0">
-        <widget class="QWidget" name="widget_17" native="true">
+        <widget class="QWidget" name="Player4Card4_Widget" native="true">
          <property name="styleSheet">
           <string notr="true">background-color: rgb(134, 134, 134);</string>
          </property>
         </widget>
        </item>
        <item row="5" column="0">
-        <widget class="QWidget" name="widget_16" native="true">
+        <widget class="QWidget" name="Player4Card5_Widget" native="true">
          <property name="styleSheet">
           <string notr="true">background-color: rgb(134, 134, 134);</string>
          </property>
         </widget>
        </item>
        <item row="3" column="0">
-        <widget class="QWidget" name="widget_18" native="true">
+        <widget class="QWidget" name="Player4Card3_Widget" native="true">
          <property name="styleSheet">
           <string notr="true">background-color: rgb(134, 134, 134);</string>
          </property>
         </widget>
        </item>
        <item row="2" column="0">
-        <widget class="QWidget" name="widget_19" native="true">
+        <widget class="QWidget" name="Player4Card2_Widget" native="true">
          <property name="styleSheet">
           <string notr="true">background-color: rgb(134, 134, 134);</string>
          </property>
         </widget>
        </item>
        <item row="0" column="0">
-        <widget class="QLabel" name="label_8">
+        <widget class="QLabel" name="Player4Hand_Label">
          <property name="styleSheet">
           <string notr="true">color: rgb(0, 0, 0);</string>
          </property>
@@ -177,7 +177,7 @@
         </widget>
        </item>
        <item row="1" column="0">
-        <widget class="QWidget" name="widget_20" native="true">
+        <widget class="QWidget" name="Player4Card1_Widget" native="true">
          <property name="styleSheet">
           <string notr="true">background-color: rgb(134, 134, 134);</string>
          </property>
@@ -187,13 +187,13 @@
      </widget>
     </item>
     <item row="0" column="3">
-     <widget class="QWidget" name="Player4Hand_Widget_2" native="true">
+     <widget class="QWidget" name="Player5Hand_Widget" native="true">
       <property name="styleSheet">
        <string notr="true">background-color: rgb(255, 255, 255);</string>
       </property>
       <layout class="QGridLayout" name="gridLayout_25">
        <item row="0" column="0">
-        <widget class="QLabel" name="label_22">
+        <widget class="QLabel" name="Player5Hand_Label">
          <property name="styleSheet">
           <string notr="true">color: rgb(0, 0, 0);</string>
          </property>
@@ -206,35 +206,35 @@
         </widget>
        </item>
        <item row="2" column="0">
-        <widget class="QWidget" name="widget_14" native="true">
+        <widget class="QWidget" name="Player5Card2_Widget" native="true">
          <property name="styleSheet">
           <string notr="true">background-color: rgb(134, 134, 134);</string>
          </property>
         </widget>
        </item>
        <item row="5" column="0">
-        <widget class="QWidget" name="widget_11" native="true">
+        <widget class="QWidget" name="Player5Card5_Widget" native="true">
          <property name="styleSheet">
           <string notr="true">background-color: rgb(134, 134, 134);</string>
          </property>
         </widget>
        </item>
        <item row="4" column="0">
-        <widget class="QWidget" name="widget_12" native="true">
+        <widget class="QWidget" name="Player5Card4_Widget" native="true">
          <property name="styleSheet">
           <string notr="true">background-color: rgb(134, 134, 134);</string>
          </property>
         </widget>
        </item>
        <item row="3" column="0">
-        <widget class="QWidget" name="widget_13" native="true">
+        <widget class="QWidget" name="Player5Card3_Widget" native="true">
          <property name="styleSheet">
           <string notr="true">background-color: rgb(134, 134, 134);</string>
          </property>
         </widget>
        </item>
        <item row="1" column="0">
-        <widget class="QWidget" name="widget_15" native="true">
+        <widget class="QWidget" name="Player5Card1_Widget" native="true">
          <property name="styleSheet">
           <string notr="true">background-color: rgb(134, 134, 134);</string>
          </property>
@@ -250,42 +250,42 @@
       </property>
       <layout class="QGridLayout" name="gridLayout_2">
        <item row="1" column="0">
-        <widget class="QWidget" name="widget_6" native="true">
+        <widget class="QWidget" name="Player1Card1_Widget" native="true">
          <property name="styleSheet">
           <string notr="true">background-color: rgb(134, 134, 134);</string>
          </property>
         </widget>
        </item>
        <item row="1" column="2">
-        <widget class="QWidget" name="widget_8" native="true">
+        <widget class="QWidget" name="Player1Card3_Widget" native="true">
          <property name="styleSheet">
           <string notr="true">background-color: rgb(134, 134, 134);</string>
          </property>
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QWidget" name="widget_7" native="true">
+        <widget class="QWidget" name="Player1Card2_Widget" native="true">
          <property name="styleSheet">
           <string notr="true">background-color: rgb(134, 134, 134);</string>
          </property>
         </widget>
        </item>
        <item row="1" column="3">
-        <widget class="QWidget" name="widget_9" native="true">
+        <widget class="QWidget" name="Player1Card4_Widget" native="true">
          <property name="styleSheet">
           <string notr="true">background-color: rgb(134, 134, 134);</string>
          </property>
         </widget>
        </item>
        <item row="1" column="4">
-        <widget class="QWidget" name="widget_10" native="true">
+        <widget class="QWidget" name="Player1Card5_Widget" native="true">
          <property name="styleSheet">
           <string notr="true">background-color: rgb(134, 134, 134);</string>
          </property>
         </widget>
        </item>
        <item row="0" column="0" colspan="5">
-        <widget class="QLabel" name="label">
+        <widget class="QLabel" name="Player1Hand_Label">
          <property name="styleSheet">
           <string notr="true">color: rgb(0, 0, 0);</string>
          </property>
@@ -301,7 +301,7 @@
      </widget>
     </item>
     <item row="1" column="1" colspan="2">
-     <layout class="QGridLayout" name="gridLayout_24">
+     <layout class="QGridLayout" name="PlayArea_Layout">
       <item row="0" column="2">
        <widget class="QWidget" name="Deck_Widget" native="true">
         <property name="styleSheet">
@@ -309,7 +309,7 @@
         </property>
         <layout class="QGridLayout" name="gridLayout_5">
          <item row="0" column="0">
-          <widget class="QLabel" name="label_4">
+          <widget class="QLabel" name="Deck_Label">
            <property name="styleSheet">
             <string notr="true">color: rgb(0, 0, 0);</string>
            </property>
@@ -486,7 +486,7 @@
            </property>
            <layout class="QGridLayout" name="gridLayout_17">
             <item row="0" column="0">
-             <widget class="QLabel" name="label_15">
+             <widget class="QLabel" name="Hint8_Label">
               <property name="styleSheet">
                <string notr="true">color: rgb(251, 255, 0);</string>
               </property>
@@ -508,7 +508,7 @@
            </property>
            <layout class="QGridLayout" name="gridLayout_13">
             <item row="0" column="0">
-             <widget class="QLabel" name="label_11">
+             <widget class="QLabel" name="Hint4_Label">
               <property name="styleSheet">
                <string notr="true">color: rgb(251, 255, 0);</string>
               </property>
@@ -530,7 +530,7 @@
            </property>
            <layout class="QGridLayout" name="gridLayout_10">
             <item row="0" column="0">
-             <widget class="QLabel" name="label_2">
+             <widget class="QLabel" name="Hint1_Label">
               <property name="styleSheet">
                <string notr="true">color: rgb(251, 255, 0);</string>
               </property>
@@ -552,7 +552,7 @@
            </property>
            <layout class="QGridLayout" name="gridLayout_16">
             <item row="0" column="0">
-             <widget class="QLabel" name="label_14">
+             <widget class="QLabel" name="Hint7_Label">
               <property name="styleSheet">
                <string notr="true">color: rgb(251, 255, 0);</string>
               </property>
@@ -574,7 +574,7 @@
            </property>
            <layout class="QGridLayout" name="gridLayout_14">
             <item row="0" column="0">
-             <widget class="QLabel" name="label_12">
+             <widget class="QLabel" name="Hint5_Label">
               <property name="styleSheet">
                <string notr="true">color: rgb(251, 255, 0);</string>
               </property>
@@ -596,7 +596,7 @@
            </property>
            <layout class="QGridLayout" name="gridLayout_18">
             <item row="0" column="0">
-             <widget class="QLabel" name="label_16">
+             <widget class="QLabel" name="Fuse_Label">
               <property name="styleSheet">
                <string notr="true">color: rgb(255, 255, 255);</string>
               </property>
@@ -618,7 +618,7 @@
            </property>
            <layout class="QGridLayout" name="gridLayout_15">
             <item row="0" column="0">
-             <widget class="QLabel" name="label_13">
+             <widget class="QLabel" name="Hint6_Label">
               <property name="styleSheet">
                <string notr="true">color: rgb(251, 255, 0);</string>
               </property>
@@ -640,7 +640,7 @@
            </property>
            <layout class="QGridLayout" name="gridLayout_12">
             <item row="0" column="0">
-             <widget class="QLabel" name="label_10">
+             <widget class="QLabel" name="Hint3_Label">
               <property name="styleSheet">
                <string notr="true">color: rgb(251, 255, 0);</string>
               </property>
@@ -662,7 +662,7 @@
            </property>
            <layout class="QGridLayout" name="gridLayout_11">
             <item row="0" column="0">
-             <widget class="QLabel" name="label_9">
+             <widget class="QLabel" name="Hint2_Label">
               <property name="styleSheet">
                <string notr="true">color: rgb(251, 255, 0);</string>
               </property>
@@ -687,13 +687,13 @@
         </property>
         <layout class="QGridLayout" name="gridLayout_4">
          <item row="4" column="0">
-          <widget class="QWidget" name="widget_2" native="true">
+          <widget class="QWidget" name="YellowSequence_Widget" native="true">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(255, 255, 0);</string>
            </property>
            <layout class="QGridLayout" name="gridLayout_23">
             <item row="0" column="0">
-             <widget class="QLabel" name="label_21">
+             <widget class="QLabel" name="YellowSequence_Label">
               <property name="styleSheet">
                <string notr="true">color: rgb(0, 0, 0);</string>
               </property>
@@ -709,13 +709,13 @@
           </widget>
          </item>
          <item row="3" column="0">
-          <widget class="QWidget" name="widget_3" native="true">
+          <widget class="QWidget" name="BlueSequence_Widget" native="true">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(0, 59, 255);</string>
            </property>
            <layout class="QGridLayout" name="gridLayout_22">
             <item row="0" column="0">
-             <widget class="QLabel" name="label_20">
+             <widget class="QLabel" name="BlueSequence_Label">
               <property name="styleSheet">
                <string notr="true">color: rgb(0, 0, 0);</string>
               </property>
@@ -731,10 +731,10 @@
           </widget>
          </item>
          <item row="0" column="0">
-          <widget class="QWidget" name="widget" native="true">
+          <widget class="QWidget" name="WhiteSequence_Widget" native="true">
            <layout class="QGridLayout" name="gridLayout_19">
             <item row="0" column="0">
-             <widget class="QLabel" name="label_17">
+             <widget class="QLabel" name="WhiteSequence_Label">
               <property name="styleSheet">
                <string notr="true">color: rgb(0, 0, 0);</string>
               </property>
@@ -750,13 +750,13 @@
           </widget>
          </item>
          <item row="2" column="0">
-          <widget class="QWidget" name="widget_4" native="true">
+          <widget class="QWidget" name="GreenSequence_Widget" native="true">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(0, 170, 0);</string>
            </property>
            <layout class="QGridLayout" name="gridLayout_21">
             <item row="0" column="0">
-             <widget class="QLabel" name="label_19">
+             <widget class="QLabel" name="GreenSequence_Label">
               <property name="styleSheet">
                <string notr="true">color: rgb(0, 0, 0);</string>
               </property>
@@ -772,13 +772,13 @@
           </widget>
          </item>
          <item row="1" column="0">
-          <widget class="QWidget" name="widget_5" native="true">
+          <widget class="QWidget" name="RedSequence_Widget" native="true">
            <property name="styleSheet">
             <string notr="true">background-color: rgb(255, 0, 0);</string>
            </property>
            <layout class="QGridLayout" name="gridLayout_20">
             <item row="0" column="0">
-             <widget class="QLabel" name="label_18">
+             <widget class="QLabel" name="RedSequence_Label">
               <property name="styleSheet">
                <string notr="true">color: rgb(0, 0, 0);</string>
               </property>
