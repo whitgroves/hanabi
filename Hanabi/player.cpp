@@ -3,5 +3,5 @@
 Player::Player(QString username)
 {
     this->username = username;
-    this->tiles = QList<QString>();
+    this->tiles = QList<Tile>();
 }

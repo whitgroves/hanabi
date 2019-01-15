@@ -36,7 +36,24 @@ void Game::startGame()
 
 void Game::runGame()
 {
+    foreach(Player player, this->players)
+    {
+        foreach(Tile tile, player.tiles)
+        {
+            // TODO: send signal to UI to populate the player's tiles
+        }
 
+        foreach(Player otherPlayer, this->players)
+        {
+            if(&otherPlayer != &player)
+            {
+                foreach(Tile tile, otherPlayer.tiles)
+                {
+                    //TODO: send signal to UI to populate the other players' team view
+                }
+            }
+        }
+    }
 }
 
 void Game::setupTiles()
