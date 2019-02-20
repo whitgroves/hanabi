@@ -1,12 +1,12 @@
-#include "game.h"
+#include "gameinstance.h"
 
-Game::Game(QList<Player> players)
+GameInstance::GameInstance(QList<Player> players)
 {
     this->players = players;
     this->startGame();
 }
 
-void Game::startGame()
+void GameInstance::startGame()
 {
     this->tiles = QList<Tile>();
     this->stacks = QHash<Colors, int>();
@@ -34,7 +34,7 @@ void Game::startGame()
     this->endGame();
 }
 
-void Game::runGame()
+void GameInstance::runGame()
 {
     foreach(Player player, this->players)
     {
@@ -56,37 +56,37 @@ void Game::runGame()
     }
 }
 
-void Game::setupTiles()
+void GameInstance::setupTiles()
 {
 
 }
 
-void Game::dealTiles()
+void GameInstance::dealTiles()
 {
 
 }
 
-void Game::giveColorHint()
+void GameInstance::giveColorHint()
 {
 
 }
 
-void Game::giveNumberHint()
+void GameInstance::giveNumberHint()
 {
 
 }
 
-void Game::playTile()
+void GameInstance::playTile()
 {
 
 }
 
-void Game::discardTile()
+void GameInstance::discardTile()
 {
 
 }
 
-void Game::endGame()
+void GameInstance::endGame()
 {
 
 }

@@ -5,10 +5,10 @@
 #include <QList>
 #include <QHash>
 
-class Game
+class GameInstance
 {
 public:
-    Game(QList<Player> players);
+    GameInstance(QList<Player> players);
 
 private:
     void startGame();

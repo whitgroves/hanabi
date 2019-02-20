@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui widgets
+QT       += core gui widgets network
 
 TARGET = Hanabi
 TEMPLATE = app
@@ -25,15 +25,11 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    tile.cpp \
-    player.cpp \
-    game.cpp
+    gameclient.cpp
 
 HEADERS += \
         mainwindow.h \
-    tile.h \
-    player.h \
-    game.h
+    gameclient.h
 
 FORMS += \
         mainwindow.ui
