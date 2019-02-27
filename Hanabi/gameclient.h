@@ -22,6 +22,7 @@ public slots:
     void logError(QAbstractSocket::SocketError socketError);
     void sessionOpened();
     void logSocketConnected();
+    bool writeData(QByteArray data);
 
 private:
     QTcpSocket *socket = nullptr;

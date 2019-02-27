@@ -12,6 +12,7 @@ GameClient::GameClient(QObject *parent) : QObject(parent), socket(new QTcpSocket
 
     connect(socket, &QAbstractSocket::connected, this, &GameClient::logSocketConnected);
 
+    //TODO: remove if unecessary
     QNetworkConfigurationManager manager;
     if (manager.capabilities() & QNetworkConfigurationManager::NetworkSessionRequired) {
         //get saved netconfig, or default if there isn't one
@@ -56,13 +57,25 @@ void GameClient::readMessage() {
         return;
     }
 
-    if (nextMessage == currentMessage) {
-        QTimer::singleShot(0, this, &GameClient::requestMessage);
+    //send off a message for debugging
+    QByteArray responseBlock;
+    QDataStream out(&responseBlock, QIODevice::WriteOnly);
+    out.setVersion(QDataStream::Qt_5_10);
 
-        qDebug() << "no new data. requesting new message.";
+    QString responseString = "So Hector and his rectum are real?";
+    out << responseString;
 
-        return;
-    }
+    socket->write(responseBlock);
+
+    qDebug() << "Message sent: " + responseString;
+
+//    if (nextMessage == currentMessage) {
+//        QTimer::singleShot(0, this, &GameClient::requestMessage);
+
+//        qDebug() << "no new data. requesting new message.";
+
+//        return;
+//    }
 
     currentMessage = nextMessage;
 
@@ -85,6 +98,7 @@ void GameClient::logError(QAbstractSocket::SocketError socketError) {
     }
 }
 
+// TODO: remove if unecessary
 void GameClient::sessionOpened() {
     // save the used netconfig
     QNetworkConfiguration config = networkSession->configuration();
@@ -99,4 +113,22 @@ void GameClient::sessionOpened() {
     settings.beginGroup(QLatin1String("QtNetwork"));
     settings.setValue(QLatin1String("DefaultNetworkConfiguration"), id);
     settings.endGroup();
+}
+
+bool GameClient::writeData(QByteArray data) {
+    if(socket->state() == QAbstractSocket::ConnectedState) {
+        // determine size of package, and write that first as qint32 (4 bytes)
+        QByteArray sizeData;
+        QDataStream temp(&sizeData, QIODevice::ReadWrite);
+        temp << data.size();
+
+        // write and send
+        socket->write(sizeData);
+        socket->write(data);
+
+        return socket->waitForBytesWritten();
+    }
+    else {
+        return false;
+    }
 }

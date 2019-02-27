@@ -2,10 +2,8 @@
 #define GAMESERVER_H
 
 #include <QObject>
+#include <QtNetwork>
 #include <QDebug>
-
-class QTcpServer;
-class QNetworkSession;
 
 class GameServer : public QObject
 {
@@ -14,12 +12,19 @@ class GameServer : public QObject
 public:
     explicit GameServer(QObject *parent = nullptr);
 
+signals:
+    void dataReceived(QByteArray);
+
 private slots:
     void sessionOpened();
-    void sendMessage();
+    void newConnection();
+    void disconnected();
+    void readyRead();
 
 private:
     QTcpServer *server = nullptr;
+    QHash<QTcpSocket*, QByteArray*> buffers; //store data until the whole block is received
+    QHash<QTcpSocket*, qint32*> sizes; //store size of each block to verify it's been received completely
     QNetworkSession *networkSession = nullptr;
 };
 
