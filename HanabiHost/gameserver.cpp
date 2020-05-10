@@ -5,7 +5,6 @@
 
 GameServer::GameServer(QObject *parent) : QObject(parent)
 {
-    // TODO: remove netconfig block if unneeded.
     QNetworkConfigurationManager manager;
     if (manager.capabilities() & QNetworkConfigurationManager::NetworkSessionRequired) {
         // pull saved netconfig, or default if no config
@@ -21,7 +20,7 @@ GameServer::GameServer(QObject *parent) : QObject(parent)
         networkSession = new QNetworkSession(config, this);
         connect(networkSession, &QNetworkSession::opened, this, &GameServer::sessionOpened);
 
-        qDebug() << "Opening network session";
+        qDebug() << "Opening network session...";
 
         networkSession->open();
     } else {
@@ -31,7 +30,6 @@ GameServer::GameServer(QObject *parent) : QObject(parent)
 
 void GameServer::sessionOpened()
 {
-    // Save the netconfig TODO: remove if possible
     if (networkSession) {
         QNetworkConfiguration config = networkSession->configuration();
         QString id;
@@ -51,14 +49,14 @@ void GameServer::sessionOpened()
     connect(server, &QTcpServer::newConnection, this, &GameServer::newConnection);
 
     if (!server->listen(QHostAddress::LocalHost, 8081)) {
-        qDebug() << "Unable to start the server";
+        qDebug() << "Unable to start the server.";
 
         return;
     }
     QString ipAddress = QHostAddress(QHostAddress::LocalHost).toString();
     QString serverPort = QString::number(server->serverPort());
 
-    qDebug() << "Server is running on port " + serverPort;
+    qDebug() << "Server is running on port: " + serverPort;
 }
 
 void GameServer::newConnection()
@@ -80,7 +78,7 @@ void GameServer::newConnection()
         QDataStream out(&messageBlock, QIODevice::WriteOnly);
         out.setVersion(QDataStream::Qt_5_10);
 
-        QString messageString = "Welcome to Skylark Tonight! I'm your host, Dave Skylark, and today we have a connected server!";
+        QString messageString = "New client connected to host.";
         out << messageString;
 
         socket->write(messageBlock);
@@ -126,7 +124,20 @@ void GameServer::readyRead() {
                 dataSize = 0;
                 *size = dataSize;
 
-                qDebug() << data; //debugging
+                //hack for fixing raw data https://stackoverflow.com/questions/49168013/remove-null-character-x00-in-between-buffer-of-byte-array-qt
+                char fixed[255];
+                int index = 0;
+                QByteArray::iterator iter = data.begin();
+                while(iter != data.end()){
+                    QChar c = *iter;
+                    if (c != '\0') fixed[index++] = c.toLatin1();
+                    iter++;
+                }
+                fixed[index] = '\0';
+
+                QString message = QString(fixed);
+
+                qDebug() << "Message received: " + message;
 
                 emit dataReceived(data);
 

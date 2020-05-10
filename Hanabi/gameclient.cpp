@@ -12,7 +12,6 @@ GameClient::GameClient(QObject *parent) : QObject(parent), socket(new QTcpSocket
 
     connect(socket, &QAbstractSocket::connected, this, &GameClient::logSocketConnected);
 
-    //TODO: remove if unecessary
     QNetworkConfigurationManager manager;
     if (manager.capabilities() & QNetworkConfigurationManager::NetworkSessionRequired) {
         //get saved netconfig, or default if there isn't one
@@ -31,7 +30,7 @@ GameClient::GameClient(QObject *parent) : QObject(parent), socket(new QTcpSocket
         networkSession->open();
     }
 
-    qDebug() << "client started, requesting first message...";
+    qDebug() << "Client started. Requesting first message...";
 
     requestMessage();
 }
@@ -42,7 +41,7 @@ void GameClient::requestMessage() {
 }
 
 void GameClient::logSocketConnected() {
-    qDebug() << "successfully connected to host.";
+    qDebug() << "Successfully connected to host.";
 }
 
 void GameClient::readMessage() {
@@ -52,38 +51,36 @@ void GameClient::readMessage() {
     in >> nextMessage;
 
     if (!in.commitTransaction()) {
-        qDebug() << "there was an error while reading the socket. waiting for more data...";
+        qDebug() << "There was an error while reading the socket. Waiting for more data...";
 
         return;
     }
 
-    //send off a message for debugging
     QByteArray responseBlock;
     QDataStream out(&responseBlock, QIODevice::WriteOnly);
     out.setVersion(QDataStream::Qt_5_10);
 
-    QString responseString = "So Hector and his rectum are real?";
+    QString responseString = "This is a debug message.";
     out << responseString;
 
     socket->write(responseBlock);
 
     qDebug() << "Message sent: " + responseString;
 
-//    if (nextMessage == currentMessage) {
-//        QTimer::singleShot(0, this, &GameClient::requestMessage);
+    if (nextMessage == currentMessage) {
+        QTimer::singleShot(0, this, &GameClient::requestMessage);
 
-//        qDebug() << "no new data. requesting new message.";
+        qDebug() << "No new data. Requesting new message...";
 
-//        return;
-//    }
+        return;
+    }
 
     currentMessage = nextMessage;
 
-    qDebug() << currentMessage; // TODO: link this to a display in the UI via signal
+    qDebug() << "Message received: " + currentMessage;
 }
 
 void GameClient::logError(QAbstractSocket::SocketError socketError) {
-    // TODO: write to logfile instead of debug console
     switch(socketError) {
     case QAbstractSocket::RemoteHostClosedError:
         break;
@@ -94,13 +91,11 @@ void GameClient::logError(QAbstractSocket::SocketError socketError) {
         qDebug() << "Connection refused. Please check that HanabiHost is running.";
         break;
     default:
-        qDebug() << socket->errorString();
+        qDebug() << "Unexpected error: " + socket->errorString();
     }
 }
 
-// TODO: remove if unecessary
 void GameClient::sessionOpened() {
-    // save the used netconfig
     QNetworkConfiguration config = networkSession->configuration();
     QString id;
 
